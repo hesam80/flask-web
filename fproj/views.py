@@ -1,6 +1,6 @@
 from flask import Blueprint
 
 views = Blueprint('viwes', __name__)
-@auth.route('/')
+@views.route('/')
 def home():
     return "<p>home</p>"
