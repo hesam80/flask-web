@@ -12,5 +12,10 @@ jobs:
             pip install docker
             pip install --upgrade pip
             pip install build
-            
+      - run:
+          name: Code Has Arrived
+          command: |
+            ls -al
+            echo '^^^That should look familiar^^^'
+    
 
