@@ -20,5 +20,6 @@ jobs:
           docker build -t flaskapp:$TAG .
           echo $DOCKER_PASS | docker login -u hesam80 -p sa13801380
           docker tag flaskapp:$TAG hesam80/flaskapp:latest
-          docker push hesam80/flaskapp:latest 
+          docker push hesam80/flaskapp:latest
+          COLLECT_ERROR=True fandogh login --username hesam80  --password sa13801380
           
