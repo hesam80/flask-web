@@ -13,15 +13,6 @@ jobs:
       - setup_remote_docker:
           version: 19.03.13
           docker_layer_caching: true
-
-      - run:
-          name: The First Step
-          command: |
-            echo 'Hello World!'
-            echo 'This is the delivery pipeline'
-            pip install docker
-            pip install --upgrade pip
-            pip install fandogh-cli
       # build and push Docker image
       - run: |
           TAG=0.1.$CIRCLE_BUILD_NUM
@@ -29,5 +20,10 @@ jobs:
           echo $DOCKER_PASS | docker login -u hesam80 -p sa13801380
           docker tag flaskapp:$TAG hesam80/flaskapp:latest
           docker push hesam80/flaskapp:latest
+
+      - run:
+          name: The First Step
+          command: |
+            echo 'Hello World!'
 
           
