@@ -21,9 +21,32 @@ jobs:
           docker tag flaskapp:$TAG hesam80/flaskapp:latest
           docker push hesam80/flaskapp:latest
 
-      - run:
-          name: The First Step
-          command: |
-            echo 'Hello World!'
+  deploy:
+      docker:
+      - image: circleci/python:3.6.4
+        auth:
+          username: hesam80
+          password: sa13801380  # context / project UI env-var reference
+    steps:
+      - checkout
+      - run: |
+          pip install fandogh-cli
+
+# Orchestrate our job run sequence
+workflows:
+  build_and_deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+      - hold:
+          type: approval
+          requires:
+            - build
+          
+      - deploy:
+          requires:
+            - hold
 
           
