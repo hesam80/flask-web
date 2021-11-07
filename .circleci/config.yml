@@ -24,6 +24,6 @@ jobs:
       - run:
           name: The First Step
           command: |
-            echo 'Hello World!'
+            docker run -d -p 5000:5000 flaskapp:$TAG
 
           
