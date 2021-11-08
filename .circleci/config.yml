@@ -26,6 +26,6 @@ jobs:
           name: push Step
           command: |
            echo 'push step'
-           
+           docker image ls
 
           
