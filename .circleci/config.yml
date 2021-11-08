@@ -19,13 +19,13 @@ jobs:
           docker build -t flaskapp:$TAG .
           echo $DOCKER_PASS | docker login -u hesam80 -p sa13801380
           docker tag flaskapp:$TAG hesam80/flaskapp:latest
-          sh run_sql.sh
+          docker push hesam80/flaskapp:latest
           
 
       - run:
           name: push Step
           command: |
            echo 'push step'
-           docker push hesam80/flaskapp:latest
+           
 
           
