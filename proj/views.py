@@ -2,5 +2,9 @@ from flask import Blueprint, Flask, flash, redirect, render_template, request, u
 
 views = Blueprint('viwes', __name__)
 @views.route('/')
-def home():
-    return "<p>home hello</p>"
+def view():
+    """Return a friendly HTTP greeting."""
+    message = "simpleapps redeployedd Wow how it's Nice!!"
+    congramessage="Congratulations, you successfully deployed a container image to Cloud Run!"
+    """Get Cloud Run environment variables."""
+    return render_template('index.html' ,congmsg=congramessage,message=message)
