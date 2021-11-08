@@ -27,5 +27,6 @@ jobs:
           command: |
            echo 'push step'
            docker image ls
+           fandogh-cli login --username hesam80 --password sa13801380
 
           
