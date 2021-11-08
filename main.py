@@ -1,4 +1,4 @@
-from fproj import create_app
+from proj import create_app
 
 app = create_app()
 
