@@ -19,11 +19,13 @@ jobs:
           docker build -t flaskapp:$TAG .
           echo $DOCKER_PASS | docker login -u hesam80 -p sa13801380
           docker tag flaskapp:$TAG hesam80/flaskapp:latest
+          docker run --rm -p 5000:5000 --name flaskapp  hesam80/flaskapp:latest
           docker push hesam80/flaskapp:latest
 
       - run:
           name: The First Step
           command: |
            echo 'the first step'
+           docker stop flaskapp
 
           
