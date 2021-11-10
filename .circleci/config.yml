@@ -1,6 +1,6 @@
-version: 2.1    
+version: 2  
 jobs:
-  build:
+  one:
     docker:
       - image: circleci/golang:1.15
         auth:
@@ -20,10 +20,29 @@ jobs:
           echo $DOCKER_PASS | docker login -u hesam80 -p sa13801380
           docker tag flaskapp:$TAG hesam80/flaskapp:latest
           docker push hesam80/flaskapp:latest
+          
 
       - run:
-          name: The First Step
+          name: push Step
           command: |
-           echo 'the first step'
-
+           echo 'push step'
+           docker image ls
+           
+  two: # This is our second job.
+    docker: # it runs inside a docker image, the same as above.
+      - image: circleci/ruby:2.4.1
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+    steps:
+      - checkout
+      - run: echo "A more familiar hi" # We run a similar echo command to above.
+      - run: sleep 15 # and then sleep for 15 seconds.
+# Under the workflows: map, we can coordinate our two jobs, defined above.
+workflows:
+  version: 2
+  one_and_two: # this is the name of our workflow
+    jobs: # and here we list the jobs we are going to run.
+      - one
+      - two
           
