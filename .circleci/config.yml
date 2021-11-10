@@ -1,6 +1,6 @@
 version: 2  
  jobs:
-  one:
+   one:
 
    steps:
       # ... steps for building/testing app ...
