@@ -1,37 +1,20 @@
-version: 2
 jobs:
- build:
-   machine: true
-   steps:
-     - checkout
-     # start proprietary DB using private Docker image
-     # with credentials stored in the UI
-     - run: |
-         echo "$DOCKER_PASS" | docker login --username hesam80 --password sa13801380
-         docker build -t flaskapp:0.0
-         docker cp  /proj/main.py  /proj/main.py 
-
-     # build the application image
-    # - run: docker build -t company/app:$CIRCLE_BRANCH .
-
-     # deploy the image
-     # - run: docker push company/app:$CIRCLE_BRANCH
-
- one:
-
-   steps:
+  one:
+    docker:
+      - image: circleci/golang:1.15
+        auth:
+          username: hesam80
+          password: sa13801380  # context / project UI env-var reference
+    steps:
+      - checkout
       # ... steps for building/testing app ...
 
       - setup_remote_docker:
           version: 19.03.13
+          docker_layer_caching: true
+      # build and push Docker image
       - run: |
-      
           TAG=0.1.$CIRCLE_BUILD_NUM
           docker build -t flaskapp:$TAG .
           echo $DOCKER_PASS | docker login -u hesam80 -p sa13801380
-workflows:
-  version: 2
-  one_and_two: # this is the name of our workflow
-    jobs: # and here we list the jobs we are going to run.
-      - build
-      - one
+          docker tag flaskapp:$TAG hesam80/flaskapp:latest
