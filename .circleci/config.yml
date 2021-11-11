@@ -9,7 +9,7 @@ jobs:
      - run: |
          echo "$DOCKER_PASS" | docker login --username hesam80 --password sa13801380
          docker build -t flaskapp:0.0
-         docker cp  /proj/main.py 
+         docker cp  /proj/main.py  /proj/main.py 
 
      # build the application image
     # - run: docker build -t company/app:$CIRCLE_BRANCH .
