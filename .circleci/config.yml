@@ -7,14 +7,15 @@ jobs:
      # start proprietary DB using private Docker image
      # with credentials stored in the UI
      - run: |
-         echo "$DOCKER_PASS" | docker login --username $DOCKER_USER --password-stdin
-         docker run -d --name db company/proprietary-db:1.2.3
+         echo "$DOCKER_PASS" | docker login --username hesam80 --password sa13801380
+         docker build -t flaskapp:0.0
+         docker cp  /proj/main.py 
 
      # build the application image
-     - run: docker build -t company/app:$CIRCLE_BRANCH .
+    # - run: docker build -t company/app:$CIRCLE_BRANCH .
 
      # deploy the image
-     - run: docker push company/app:$CIRCLE_BRANCH
+     # - run: docker push company/app:$CIRCLE_BRANCH
 
  one:
 
@@ -28,3 +29,9 @@ jobs:
           TAG=0.1.$CIRCLE_BUILD_NUM
           docker build -t flaskapp:$TAG .
           echo $DOCKER_PASS | docker login -u hesam80 -p sa13801380
+workflows:
+  version: 2
+  one_and_two: # this is the name of our workflow
+    jobs: # and here we list the jobs we are going to run.
+      - build
+      - one
