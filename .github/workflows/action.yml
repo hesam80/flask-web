@@ -1,17 +1,15 @@
 name: Deploy
 on: [push]
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: deploy action step
-        uses: Glyphack/fandogh-service-deploy-action@v1
+        uses: hesam80/fandogh-service-deploy-action@v1.2.0
         with:
           username: ${{ secrets.FANDOGH_USERNAME }}
           password: ${{ secrets.FANDOGH_PASSWORD }}
-          image_name: my_image
-          image_version: v1
+          image_name: hesam80/flaskapp
+          image_version: latest
           path_to_service_file: ./flaskapp.yml
-
