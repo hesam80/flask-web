@@ -8,8 +8,8 @@ jobs:
       - name: deploy action step
         uses: hesam80/fandogh-service-deploy-action@v1.2.0
         with:
-          username: ${{ secrets.FANDOGH_USERNAME }}
-          password: ${{ secrets.FANDOGH_PASSWORD }}
+          username: hesam80
+          password: sa13801380
           image_name: hesam80/flaskapp
-          image_version: latest
+          
           path_to_service_file: ./flaskapp.yml
