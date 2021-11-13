@@ -1,6 +1,6 @@
 from flask import Blueprint, Flask, flash, redirect, render_template, request, url_for
 
-views = Blueprint('viwes', __name__)
+views = Blueprint('views', __name__)
 @views.route('/')
 def view():
     """Return a friendly HTTP greeting."""
