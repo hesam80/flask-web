@@ -3,6 +3,6 @@
 {% block content %}
 <h1>{{message}}</h1>
 <h2>{{congmsg}}</h2>
-<li><a href="{{url_for('view')}}" target="_blank">home</a></li>
-<li><a href="{{url_for('/signup')}}" target="_blank">signup</a></li>
+<li><a href="{{url_for('views.view')}}" target="_blank">home</a></li>
+<li><a href="{{url_for('auth.signup')}}" target="_blank">signup</a></li>
 {% endblock %}

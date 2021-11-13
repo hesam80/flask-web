@@ -4,7 +4,7 @@ views = Blueprint('viwes', __name__)
 @views.route('/')
 def view():
     """Return a friendly HTTP greeting."""
-    message = "simpleapps redeployedd Wow how it's Nice!!0000"
+    message = "simpleapps redeployedd Wow how it's Nice!20000"
     congramessage="Congratulations, you successfully deployed a container image to Cloud Run!"
     """Get Cloud Run environment variables."""
     return render_template('index.html' ,congmsg=congramessage,message=message)
