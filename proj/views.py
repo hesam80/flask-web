@@ -10,6 +10,10 @@ views = Blueprint('views', __name__)
 @views.route('/', methods=['GET', 'POST'])
 @login_required
 def home():
+    """Return a friendly HTTP greeting."""
+    message = "simpleapps redeployedd Wow how it's Nice!!"
+    congramessage="Congratulations, you successfully deployed a container image to Cloud Run!"
+    """Get Cloud Run environment variables."""
     if request.method == 'POST':
         note = request.form.get('note')
 
@@ -21,7 +25,7 @@ def home():
             db.session.commit()
             flash('Note added!', category='success')
 
-    return render_template("home.html", user=current_user)
+    return render_template("home.html", user=current_user , congmsg=congramessage , message=message)
 
 
 @views.route('/delete-note', methods=['POST'])
