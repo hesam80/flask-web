@@ -15,7 +15,7 @@ def create_app():
 
     from .views import views
     from .auth import auth
-    from .weather import query_api
+    from .weather import weather
 
     app.register_blueprint(views, url_prefix='/')
     app.register_blueprint(auth, url_prefix='/')
