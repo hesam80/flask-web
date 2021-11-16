@@ -1,6 +1,6 @@
 version: 2  
 jobs:
-  one:
+  build:
     docker:
       - image: circleci/golang:1.15
         auth:
@@ -17,7 +17,7 @@ jobs:
       - run: |
           TAG=0.1.$CIRCLE_BUILD_NUM
           docker build -t flaskapp:$TAG .
-          echo $DOCKER_PASS | docker login -u $dockeruser -p $dockerpas
+          echo $dockeruser | docker login -u $dockeruser -p $dockerpas
 
           
 
@@ -27,12 +27,12 @@ jobs:
            echo 'push step'
            docker image ls
            
-  two: # This is our second job.
+  display: # This is our second job.
     docker: # it runs inside a docker image, the same as above.
       - image: circleci/ruby:2.4.1
         auth:
-          username: mydockerhub-user
-          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+          username: $dockeruser
+          password: $dockerpas  # context / project UI env-var reference
     steps:
       - checkout
       - run: echo "A more familiar hi" # We run a similar echo command to above.
@@ -42,6 +42,8 @@ workflows:
   version: 2
   one_and_two: # this is the name of our workflow
     jobs: # and here we list the jobs we are going to run.
-      - one
-      - two
+      - build
+      - display:
+          requires:
+          - build
           
