@@ -19,12 +19,3 @@ jobs:
           
           path_to_service_file: ./flaskapp.yml
 
-  report:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Create report file
-        run: date +%s > report.txt
-      - name: Commit report
-        run: |
-          git commit -am "Automated report"
