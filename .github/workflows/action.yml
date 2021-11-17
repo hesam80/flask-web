@@ -27,7 +27,5 @@ jobs:
         run: date +%s > report.txt
       - name: Commit report
         run: |
-          git config --global user.name 'hesam80'
-          git config --global user.email 'hm.hoseyni@gmail.com'
+          git checkout "${GITHUB_REF:11}"
           git commit -am "Automated report"
-          git push
