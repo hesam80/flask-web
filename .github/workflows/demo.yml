@@ -1,4 +1,5 @@
 name:  Demo
+on:  
   push:
     branches:
       - tst
