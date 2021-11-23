@@ -19,4 +19,4 @@ jobs:
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ Secrets.DOCKER_USERNAME }}."
       - run: echo "💡 This  is ${{ github.sha }}."
-       -run: echo "this event name ${{ github.event_name }}"
+       -run: echo "this event name ${{ github.event_name }} is"
