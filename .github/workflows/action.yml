@@ -10,11 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: deploy action step
-        uses: hesam80/fandogh-service-deploy-action@v1.2.0
-        with:
-          username: hesam80
-          password: sa13801380
-          image_name: hesam80/flaskapp
-          
-          path_to_service_file: ./flaskapp.yml
+      - run echo 'ls'
