@@ -1,10 +1,4 @@
-//variables
-let number = 20 ;
-//Array and destructuring
-const product=['film', 99, true];
-const [title, price]= product
-
-
+//JSON JSONIFY JSON.stringify(products)  
 //Objects and destructuring
 const oneproductobj={title:'film',price:99,exist:true}
 const products=[
@@ -29,12 +23,16 @@ exist: true,
 
 
 ]
+//vaghti object ro mikhahim befrstim be platform python
+const data= JSON.stringify(products);
 
+//vaghti reshte string miad va tabdilesh konim be object
+const responce= JSON.parse(data)
 
 
 
 console.log("hello");
-console.log(number);
-console.log(product);
+console.log(products);
+console.log(data);
 console.log(title);
 
