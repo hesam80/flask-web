@@ -1,6 +1,11 @@
 //variables
 let number = 20 ;
-//Array and objects
+//Array and destructuring
+const product=['film', 99, true];
+const [title, price]= product
+
+
+//Objects and destructuring
 const products=[
 {
 id:1,
@@ -23,9 +28,7 @@ exist: true,
 
 
 ]
-//destructering
-const product=['film', 99, true];
-const [title, price]= product
+
 
 
 
