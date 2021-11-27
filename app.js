@@ -30,11 +30,8 @@ const data= JSON.stringify(products);
 
 //vaghti reshte string miad va tabdilesh konim be object
 const responce= JSON.parse(data)
-
-
-
-console.log("hello");
-console.log(products);
-console.log(data);
-console.log(responce);
+//for
+for(let item=0 ; item< products.length; item++){
+    console.log(products[item].title)
+}
 
