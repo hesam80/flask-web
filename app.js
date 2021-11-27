@@ -6,6 +6,7 @@ const [title, price]= product
 
 
 //Objects and destructuring
+const oneproductobj={title:'film',price:99,exist:true}
 const products=[
 {
 id:1,
