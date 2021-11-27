@@ -1,6 +1,8 @@
 //JSON JSONIFY JSON.stringify(products)  
 //Objects and destructuring
 const oneproductobj={title:'film',price:99,exist:true}
+
+//arraye az objects ha!!
 const products=[
 {
 id:1,
@@ -34,5 +36,5 @@ const responce= JSON.parse(data)
 console.log("hello");
 console.log(products);
 console.log(data);
-console.log(title);
+console.log(responce);
 
