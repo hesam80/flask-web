@@ -2,7 +2,7 @@
 const price = 99;
 const newprice= 189;
 if(newprice>price){
-    console.log('price is ${newprice}');
+    console.log('price is'.newprice);
 }
 else if(newprice<price){
     console.log('price is ${price}');
