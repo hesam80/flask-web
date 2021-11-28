@@ -1,4 +1,6 @@
 from datetime import datetime
+from flask import Flask
+import time
 import os
 import pytz
 import requests
@@ -17,3 +19,8 @@ def query_api(city):
     return data
 #api.openweathermap.org/data/2.5/find?lat=55.5&lon=37.5&cnt=10&appid=API_KEY
 #query_api('tehran')
+print(query_api('tehran'))
+def get_current_time():
+    return {'time': time.time()}
+
+print(get_current_time())
