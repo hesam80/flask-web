@@ -32,11 +32,11 @@ exist: true,
 //destructering
 const product=['film', 99, true];
 const [title, price]= product
-
+const data = products
 
 
 console.log("hello");
 console.log(number);
-console.log(product);
+console.log(products);
 console.log(title);
 
