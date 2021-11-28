@@ -8,5 +8,5 @@ else if(newprice<price){
     console.log('price');
 }
 else{ console.log('same value price and newprice');}
-document.writeln("<body><p>hello</p></body>")
+
 
