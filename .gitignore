@@ -132,4 +132,3 @@ dmypy.json
 *.log
 .githubconfig
 myapp/.package.json.swp
-yarn.lock
