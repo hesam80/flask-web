@@ -37,3 +37,9 @@
     ]
   }
 }
+{
+
+    ... leave all other configuration options alone ...
+  
+    "proxy": "http://localhost:5000"
+  }
