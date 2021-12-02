@@ -17,4 +17,3 @@ job:
       - run: |
           TAG=0.1.$CIRCLE_BUILD_NUM
           echo $TAG
-          #docker build -t jsproject:$TAG .
