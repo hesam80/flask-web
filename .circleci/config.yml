@@ -1,5 +1,5 @@
 version: 2  
-jobs:
+job:
   one:
     docker:
       - image: circleci/golang:1.15
