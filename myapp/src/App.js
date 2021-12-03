@@ -14,8 +14,9 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <p>hello</p>
         <p>
-          Edit <code>src/App.js</code> and save to reload."3"
+          Edit <code>src/App.js</code> and save to reload.
         </p>
         <p>The current time is {currentTime}.</p>
         <a
