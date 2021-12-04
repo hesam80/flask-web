@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import useDarkMode from '.userDarkMode'
+import useDarkMode from './useDarkMode';
 function App() {
     const [currentTime, setCurrentTime] = useState(0);
-    const [them, toggleTheme] = useDarkMode();
+    const [theme, toggleTheme] = useDarkMode();
 
   useEffect(() => {
     fetch('/api/time').then(res => res.json()).then(data => {
@@ -13,12 +13,12 @@ function App() {
   }, []);
   return (
     <div className="App" style = {{
-      background-color: theme ==='dark' ? '#282c34' : '#eee',
+      background: theme ==='dark' ? '#282c34' : '#eee',
       transition: '0.2s all'    }}>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>hello</p>
-        <button type="button" onclick={toggleTheme}>Switch dark mode </button>
+        <button type="button" onClick={toggleTheme}>Switch dark mode </button>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>

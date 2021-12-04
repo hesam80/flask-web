@@ -15,6 +15,7 @@ const useDarkMode = ()=> {
 	}
 
 	useEffect(()=> {
+        // eslint-disable-next-line
 		const localTheme = window.localStorage.getItem('theme')
 	}, [])
 	return [theme, toggleTheme]
