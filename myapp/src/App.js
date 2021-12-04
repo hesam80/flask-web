@@ -13,7 +13,7 @@ function App() {
   }, []);
   return (
     <div className="App" style = {{
-      background: theme ==='dark' ? '#212121' : '#fff',
+      background-color: theme ==='dark' ? '#282c34' : '#eee',
       transition: '0.2s all'    }}>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
