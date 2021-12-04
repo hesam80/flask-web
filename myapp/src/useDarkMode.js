@@ -17,5 +17,6 @@ const useDarkMode = ()=> {
 	useEffect(()=> {
 		const localTheme = window.localStorage.getItem('theme')
 	}, [])
+	return [theme, toggleTheme]
 }
 export default useDarkMode
