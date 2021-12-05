@@ -12,17 +12,17 @@ function App() {
     });
   }, []);
   return (
-    <div className="App" style = {{
-      background: theme ==='dark' ? '#282c34' : '#eee',
-      transition: '0.2s all'    }}>
+    <div className="App" >
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>hello</p>
+        <p>theme is {theme}</p>
         <button type="button" onClick={toggleTheme}>Switch dark mode </button>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <p>The current time is {currentTime}.</p>
+        <p style = {{
+      color: theme ==='dark' ? 'rgb(174, 38, 38) ' : 'rgb(27, 6, 6) ', 
+      }}>The current time is {currentTime}.</p>
         <a
           className="App-link"
           href="https://reactjs.org"
