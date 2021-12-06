@@ -21,9 +21,9 @@ function App() {
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <p style = {{
-      color: theme ==='dark' ? 'rgb(174, 38, 38) ' : 'rgb(241, 232, 232)', 
-      transition : '2s ease-in'
-      _fontSize: 'calc(10px + 2vmin)',
+      color: theme ==='dark' ? 'rgb(155, 255, 223) ' : 'rgb(241, 232, 232)', 
+      transition : '2s ease-in',
+      'font-size': theme ==='dark' ? 'calc(20px + 2vmin)' : 'calc(8px + 2vmin',
       }}>The current time is {currentTime}.</p>
         <a
           className="App-link"
