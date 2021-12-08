@@ -14,7 +14,7 @@ function App() {
   }, []);
   useEffect(() => {
     fetch('/api/weather').then(res => res.json()).then(data => {
-      setCurrentWeather(data.weather);
+      setCurrentWeather(data.currentWeather);
     });
   }, []);
   return (
