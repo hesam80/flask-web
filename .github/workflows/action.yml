@@ -16,7 +16,6 @@ jobs:
         with:
           username: hesam80
           password: sa13801380
-          image_name: soraya
-          image_version: V1
+          image_name: hesam80/flaskapp
           path_to_service_file: ./flaskapp.yml
 
