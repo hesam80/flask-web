@@ -26,7 +26,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <p>{currentWeather}</p>
+        <p>{currentWeather.base}</p>
         <p style = {{
       color: theme ==='dark' ? 'rgb(155, 255, 223) ' : 'rgb(241, 232, 232)', 
       transition : '2s ease-in',
