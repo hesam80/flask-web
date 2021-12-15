@@ -1,0 +1,6 @@
+node_madules/
+/node_madules
+Dockerfile
+.gitignore
+venv/
+README.md
