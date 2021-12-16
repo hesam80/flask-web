@@ -1,46 +1,21 @@
-version: 2  
+orbs:
+  node: circleci/node@4.2.1
+
+version: 2.1
+
 jobs:
-  one:
-    docker:
-      - image: circleci/golang:1.15
-        auth:
-          username: hesam80
-          password: sa13801380  # context / project UI env-var reference
-    steps:
-      - checkout
-      # ... steps for building/testing app ...
+   build:
+      docker:
+        - image: docker
+      steps:
+        - setup_remote_docker:
+            docker_layer_caching: true
+        - run: docker image ls
+        - run: docker volume ls
+        - run: docker run --mount source=datastore,destination=/mnt/volume debian:bullseye-slim dd if=/dev/zero of=/mnt/volume/zero bs=32M count=32
+        - run: docker volume ls
 
-      - setup_remote_docker:
-          version: 19.03.13
-          docker_layer_caching: true
-      # build and push Docker image
-      - run: |
-          TAG=0.1.$CIRCLE_BUILD_NUM
-          #docker build -t jsproject:$TAG .
-          echo $DOCKER_PASS | docker login -u hesam80 -p sa13801380
-
-          
-
-      - run:
-          name: push Step
-          command: |
-           echo 'push step'
-           docker image ls
-           
-  two: # This is our second job.
-    docker: # it runs inside a docker image, the same as above.
-      - image: circleci/ruby:2.4.1
-        auth:
-          username: mydockerhub-user
-          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
-    steps:
-      - checkout
-      - run: echo "A more familiar hi" # We run a similar echo command to above.
-      - run: sleep 15 # and then sleep for 15 seconds.
-# Under the workflows: map, we can coordinate our two jobs, defined above.
 workflows:
-  version: 2
-  one_and_two: # this is the name of our workflow
-    jobs: # and here we list the jobs we are going to run.
-      - one
-      - two
+  app-tests:
+    jobs:
+      - build
