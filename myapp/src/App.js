@@ -8,12 +8,12 @@ function App() {
     const [theme, toggleTheme] = useDarkMode();
 
   useEffect(() => {
-    fetch('/api/time').then(res => res.json()).then(data => {
+    fetch('/backend/time').then(res => res.json()).then(data => {
       setCurrentTime(data.time);
     });
   }, []);
   useEffect(() => {
-    fetch('/api/weather').then(res => res.json()).then(data => {
+    fetch('/backend/weather').then(res => res.json()).then(data => {
       setCurrentWeather(data.currentWeather);
     });
   }, []);
