@@ -11,9 +11,7 @@ jobs:
         - checkout
         - setup_remote_docker:
             docker_layer_caching: true
-        - run: |
-          TAG=0.1.$CIRCLE_BUILD_NUM
-          docker build -t hesam80/dwa:$TAG .
+        - run: docker build -t hesam80/dwa:$TAG .
         - run: docker image ls
         - run: docker volume ls
         - run: docker run --mount source=datastore,destination=/mnt/volume debian:bullseye-slim dd if=/dev/zero of=/mnt/volume/zero bs=32M count=32
