@@ -19,7 +19,8 @@ jobs:
         - run: docker image ls
         - run: docker volume ls
         - run: docker ps
-        - run: docker logs dwa 
+        - run: docker logs dwa
+        - run: curl -i localhost:49160
 workflows:
   app-tests:
     jobs:
