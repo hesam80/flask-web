@@ -1,6 +1,8 @@
 'use strict';
 
-const express = require('express');
+import express from 'express';
+import { version } from 'process';
+
 
 // Constants
 const PORT = 8080;
@@ -12,5 +14,7 @@ app.get('/', (req, res) => {
   res.send('Hello World baby');
 });
 
+
 app.listen(PORT, HOST);
 console.log(`Running on http://${HOST}:${PORT}`);
+console.log(`Version: ${version}`);
