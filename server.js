@@ -13,6 +13,8 @@ app.get('/', (req, res) => {
   res.send('Hello World baby');
 });
 
-
+app.get('/-', (req, res) => {
+    res.send('Hello World baby');
+  });
 app.listen(PORT, HOST);
 console.log(`Running on http://${HOST}:${PORT}`);
