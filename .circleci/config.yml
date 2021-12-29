@@ -20,10 +20,7 @@ jobs:
         - run: docker volume ls
         - run: docker ps
         - run: docker logs dwa
-        - run:
-           name: curl run
-           command: echo docker-machine ip default|
-              curl -i $docker-machine ip default:49160
+        - run: whitch curl
 workflows:
   app-tests:
     jobs:
