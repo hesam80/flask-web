@@ -21,7 +21,10 @@ jobs:
         - run: docker ps
         - run: docker logs dwa
         - run: which curl
-        - run: docker exec -it dwa bash
+        - run:
+           name: curl run
+           command: |
+              curl -i 0.0.0.0:8080
 workflows:
   app-tests:
     jobs:
