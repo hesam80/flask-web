@@ -21,7 +21,7 @@ jobs:
         - run: docker ps
         - run: docker logs dwa
         - run: which curl
-        - run: docker exec -it $DOCKER_MACHINE_NAME /usr/bin/curl -i localhost:49160
+        - run: docker exec -it dwa /usr/bin/curl -i localhost:49160
 workflows:
   app-tests:
     jobs:
