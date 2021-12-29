@@ -22,7 +22,8 @@ jobs:
         - run: docker logs dwa
         - run:
            name: curl run
-           command: curl -i localhost:49160
+           command: |
+              curl -i localhost:49160
 workflows:
   app-tests:
     jobs:
