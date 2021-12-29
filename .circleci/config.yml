@@ -20,7 +20,7 @@ jobs:
         - run: docker volume ls
         - run: docker ps
         - run: docker logs dwa
-        - run: whitch curl
+        - run: which curl
 workflows:
   app-tests:
     jobs:
