@@ -20,7 +20,9 @@ jobs:
         - run: docker volume ls
         - run: docker ps
         - run: docker logs dwa
-        - run: docker exec -it dwa usr/bin/bash curl -i localhost:49160
+        - run:
+           name: curl run
+           command: curl -i localhost:49160
 workflows:
   app-tests:
     jobs:
