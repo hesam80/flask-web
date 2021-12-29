@@ -1,7 +1,9 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
 *.py[cod]
 *$py.class
-/node_modules/
 node_modules/
+myapp/node_modules/
 # C extensions
 *.so
 proj/__pycache__/
@@ -105,6 +107,7 @@ celerybeat.pid
 .venv
 env/
 venv/
+/venv/
 ENV/
 env.bak/
 venv.bak/
@@ -128,3 +131,4 @@ dmypy.json
 .pyre/
 *.log
 .githubconfig
+myapp/.package.json.swp
