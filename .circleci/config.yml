@@ -21,7 +21,7 @@ jobs:
         - run: docker ps
         - run: docker logs dwa
         - run: which curl
-        - run: docker-machine ip default
+        - run: docker exec -it dwa bash
 workflows:
   app-tests:
     jobs:
