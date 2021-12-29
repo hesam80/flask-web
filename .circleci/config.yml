@@ -24,7 +24,7 @@ jobs:
         - run:
            name: curl run
            command: |
-              curl -i 0.0.0.0:8080
+              curl -i http://0.0.0.0:8080
 workflows:
   app-tests:
     jobs:
