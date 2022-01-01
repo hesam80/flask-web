@@ -1,19 +1,11 @@
-FROM node:16
+FROM python:3.9
 
-# Create app directory
-WORKDIR /usr/src/app
+COPY ./requirements.txt /app/requirements.txt
 
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
-COPY package*.json ./
+WORKDIR /app
 
-RUN npm install
-# If you are building your code for production
-# RUN npm ci --only=production
+RUN pip install -r requirements.txt
 
-# Bundle app source
-COPY . .
+COPY . /app
 
-EXPOSE 8080
-CMD [ "node", "server.js" ]
+CMD [ "python", "app.py"]

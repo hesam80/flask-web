@@ -1,0 +1,10 @@
+Flask
+Flask-PyMongo==2.3.0
+jsonschema==4.2.1
+mssql-cli==1.0.0
+rsa==4.8
+six==1.16.0
+ujson==4.3.0
+Werkzeug==2.0.2
+zipp==3.6.0
+mysql-connector-python==8.0.27
