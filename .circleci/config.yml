@@ -41,7 +41,7 @@ jobs:
       - run: sleep 15 # and then sleep for 15 seconds.
 # Under the workflows: map, we can coordinate our two jobs, defined above.
 
-      - run: docker push hesam80/flaskapp:latest
+      
 workflows:
   version: 2
   one_and_two: # this is the name of our workflow
