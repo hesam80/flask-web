@@ -2,7 +2,7 @@ kind: ExternalService
 name: simpleapps
 spec:
     allow_http: true
-    image: ${IMAGE_URL}
+    image: ${IMAGE_URL}:${IMAGE_VERSION}
     image_pull_policy: Always
     image_pull_secret: dockerhub
     port: 5000
