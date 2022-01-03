@@ -19,6 +19,7 @@ jobs:
           docker build -t flaskapp:$TAG .
           echo $dockeruser | docker login -u $dockeruser -p $dockerpas
           docker tag flaskapp:$TAG hesam80/flaskapp:latest
+          docker push hesam80/flaskapp:latest
    
 
           
