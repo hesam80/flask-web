@@ -17,5 +17,6 @@ jobs:
           username: hesam80
           password: sa13801380
           image_name: hesam80/flaskapp
+          image_version: ${GITHUB_SHA}
           path_to_service_file: ./flaskapp.yml
 
