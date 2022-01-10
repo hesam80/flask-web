@@ -10,4 +10,4 @@ RUN pip install fandogh-cli --upgrade
 
 COPY . /app
 
-CMD ["sh" , "run_sql.sh"]
+CMD ["python" , "weather.py"]
