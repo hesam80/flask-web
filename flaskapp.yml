@@ -3,7 +3,7 @@ name: simpleapps
 spec:
     allow_http: true
     image: ${IMAGE_URL}:${IMAGE_VERSION}
-    image_pull_policy: Always
+    image_pull_policy: IfNotPresent
     image_pull_secret: dockerhub
     port: 5000
     replicas: 1
