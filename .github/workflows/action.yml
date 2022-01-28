@@ -34,17 +34,12 @@ jobs:
           
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
       - name: deploy action step
         uses: hesam80/fandogh-service-deploy-action@v1.2.0
         with:
           username: ${{ secrets.FANDOGH_USERNAME }}
           password: ${{ secrets.FANDOGH_PASSWORD }}
           image_name: ${{ secrets.DOCKER_HUB_USERNAME }}/flaskapp
-          image_version: ${IMAGE_VERSION}
-          path_to_service_file: ./service.yml
+          image_version: ${{GITHUB_SHA}}
+          path_to_service_file: ./flaskapp.yml
         
