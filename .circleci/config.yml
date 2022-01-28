@@ -43,10 +43,10 @@ jobs:
 # Under the workflows: map, we can coordinate our two jobs, defined above.
       - run:
           command: |  # use pipenv to install dependencies
-            sudo pip install --upgrade pip
-            sudo pip install fandogh-cli
+            pip install --upgrade pip
+            pip install fandogh-cli
             COLLECT_ERROR=True fandogh login --username $dockeruser --password $dockerpas
-            
+
 
       - run: run_sql.sh
       
