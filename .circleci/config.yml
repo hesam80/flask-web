@@ -32,7 +32,7 @@ jobs:
            
   display: # This is our second job.
     docker: # it runs inside a docker image, the same as above.
-      - image: cimg/base:2021.04
+      - image: cimg/python:3.10.1
         auth:
           username: $dockeruser
           password: $dockerpas  # context / project UI env-var reference
@@ -41,7 +41,14 @@ jobs:
       - run: echo "A more familiar hi" # We run a similar echo command to above.
       - run: sleep 15 # and then sleep for 15 seconds.
 # Under the workflows: map, we can coordinate our two jobs, defined above.
-      - run: sh run_sql.sh
+      - run:
+          command: |  # use pipenv to install dependencies
+            sudo pip install --upgrade pip
+            sudo pip install fandogh-cli
+            COLLECT_ERROR=True fandogh login --username $dockeruser --password $dockerpas
+            
+
+      - run: run_sql.sh
       
 workflows:
   version: 2
