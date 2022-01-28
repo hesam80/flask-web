@@ -32,15 +32,12 @@ jobs:
            
   display: # This is our second job.
     docker: # it runs inside a docker image, the same as above.
-      - image: cimg/python:3.10.1
+      - image: cimg/base:2021.04
         auth:
           username: $dockeruser
           password: $dockerpas  # context / project UI env-var reference
     steps:
       - checkout
-      - run:
-          command: |  # use pipenv to install dependencies
-            sudo pip install --upgrade fandogh-cli
       - run: echo "A more familiar hi" # We run a similar echo command to above.
       - run: sleep 15 # and then sleep for 15 seconds.
 # Under the workflows: map, we can coordinate our two jobs, defined above.
