@@ -34,4 +34,16 @@ jobs:
           
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: deploy action step
+        uses: Glyphack/fandogh-service-deploy-action@v1
+        with:
+          username: ${{ secrets.FANDOGH_USERNAME }}
+          password: ${{ secrets.FANDOGH_PASSWORD }}
+          image_name: ${{ secrets.DOCKER_HUB_USERNAME }}/flaskapp
+          image_version: ${IMAGE_VERSION}
+          path_to_service_file: ./service.yml
         
