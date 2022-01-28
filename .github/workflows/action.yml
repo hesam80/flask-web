@@ -42,4 +42,3 @@ jobs:
           image_name: ${{ secrets.DOCKER_HUB_USERNAME }}/flaskapp
           image_version: ${{GITHUB_SHA}}
           path_to_service_file: ./flaskapp.yml
-        
