@@ -32,7 +32,7 @@ jobs:
            
   display: # This is our second job.
     docker: # it runs inside a docker image, the same as above.
-      - image: cimg/python:3.10.1
+      - image: cimg/base:2021.04
         auth:
           username: $dockeruser
           password: $dockerpas  # context / project UI env-var reference
