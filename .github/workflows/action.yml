@@ -44,6 +44,8 @@ jobs:
     steps:
       - name: checkout and build image from repo
         uses: actions/checkout@v2
+      - name: wait for 15seconds
+        run: sleep 15seconds
       - name: deploy action step
         uses: hesam80/fandogh-service-deploy-action@v1.2.0
         with:
