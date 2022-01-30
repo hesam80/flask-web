@@ -21,9 +21,7 @@ jobs:
 
           
 
-      - run:
-          name: push Step
-          command: |
+      - run: |
            echo 'push step'
            echo $dockeruser | docker login -u $dockeruser -p $dockerpas
            if [ "$CIRCLE_BRANCH" = "workflow"]; then
