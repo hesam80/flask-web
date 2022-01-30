@@ -25,12 +25,14 @@ jobs:
            echo 'push step'
            echo $dockeruser | docker login -u $dockeruser -p $dockerpas
            if [ "$CIRCLE_BRANCH" = "workflow"]; then
-              docker tag $CIRCLE_BRANCH:$TAG $dockeruser/$CIRCLE_BRANCH:$CIRCLE_SHA1
-              docker push $dockeruser/$CIRCLE_BRANCH:$CIRCLE_SHA1
+              docker tag workflow:$TAG  hesam80/workflow:$CIRCLE_SHA1
+              docker push hesam80/workflow:$CIRCLE_SHA1
+              docker image ls
            else
              echo 'don't push workflow image'
+             docker image ls
            fi
-           docker image ls
+           
            
   display: # This is our second job.
     docker: # it runs inside a docker image, the same as above.
