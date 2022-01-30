@@ -16,14 +16,8 @@ jobs:
       # build and push Docker image
       - run: |
           TAG=0.1.$CIRCLE_BUILD_NUM
-          docker build -t $CIRCLECI_BRANCH:$TAG .
-          echo $dockeruser | docker login -u $dockeruser -p $dockerpas
-          if [ "$CIRCLE_BRANCH" = "workflow"]; then
-             docker tag $CIRCLE_BRANCH:$TAG $dockeruser/$CIRCLE_BRANCH:$CIRCLE_SHA1
-             docker push $dockeruser/$CIRCLE_BRANCH:$CIRCLE_SHA1
-          else
-             echo 'don't push workflow image'
-          fi
+          docker build -t "$CIRCLECI_BRANCH":"$TAG" .
+          
 
           
 
@@ -31,6 +25,13 @@ jobs:
           name: push Step
           command: |
            echo 'push step'
+           echo $dockeruser | docker login -u $dockeruser -p $dockerpas
+           if [ "$CIRCLE_BRANCH" = "workflow"]; then
+              docker tag $CIRCLE_BRANCH:$TAG $dockeruser/$CIRCLE_BRANCH:$CIRCLE_SHA1
+              docker push $dockeruser/$CIRCLE_BRANCH:$CIRCLE_SHA1
+           else
+             echo 'don't push workflow image'
+           fi
            docker image ls
            
   display: # This is our second job.
