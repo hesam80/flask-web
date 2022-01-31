@@ -5,6 +5,6 @@ views = Blueprint('views', __name__)
 def view():
     """Return a friendly HTTP greeting."""
     message = "simpleapps redeployedd Wow how it's Nice!!"
-    congramessage="Congratulations, you successfully deployed  container image to Cloud Run at 2022-Feb-01"
+    congramessage="Congratulations, you successfully deployed  container image to Cloud Run at 2022-Feb-01!"
     """Get Cloud Run environment variables."""
     return render_template('index.html' ,congmsg=congramessage,message=message)
