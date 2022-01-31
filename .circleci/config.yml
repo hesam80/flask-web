@@ -24,7 +24,7 @@ jobs:
       - run: |
            
            echo '$dockeruser | docker login -u $dockeruser -p $dockerpas'
-           if [ "$CIRCLE_BRANCH" = "workflow" ]; then
+           if [ "$CIRCLE_BRANCH" == "workflow" ]; then
               docker tag $CIRCLE_BRANCH:$TAG  hesam80/workflow:$CIRCLE_SHA1
               docker push hesam80/workflow:$CIRCLE_SHA1
               docker image ls
@@ -55,3 +55,6 @@ workflows:
       - display:
           requires:
           - build
+    filters:
+            branches:
+              only: workflow
