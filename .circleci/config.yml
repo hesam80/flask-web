@@ -25,7 +25,7 @@ jobs:
            
            echo $dockeruser | docker login -u $dockeruser -p $dockerpas
            if [ "$CIRCLE_BRANCH" = "workflow" ]; then
-              docker tag "workflow":"$TAG"  registry.hub.docker.com/hesam80/workflow:$CIRCLE_SHA1
+              docker tag "workflow":"$TAG"  "hesam80/workflow":"$CIRCLE_SHA1"
               docker push hesam80/workflow:$CIRCLE_SHA1
               docker image ls
            else
