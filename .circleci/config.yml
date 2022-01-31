@@ -55,6 +55,3 @@ workflows:
       - display:
           requires:
           - build
-    filters:
-            branches:
-              only: workflow
