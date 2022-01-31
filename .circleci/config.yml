@@ -26,7 +26,7 @@ jobs:
            
            if [ "$CIRCLE_BRANCH" == "circleci" ]; then
               echo $dockeruser | docker login -u $dockeruser -p $dockerpas
-              docker push $dockeruser/circleci:$CIRCLE_SHA1
+              docker push $dockeruser/$CIRCLE_BRANCH:$CIRCLE_SHA1
            else
               echo "don't push workflow image"
               docker image ls
