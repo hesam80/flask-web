@@ -23,9 +23,12 @@ jobs:
           
 
       - run: |
-           echo $dockeruser | docker login -u $dockeruser -p $dockerpas
+           
            if [ "$CIRCLE_BRANCH" == "circleci" ]; then
-              docker push $dockeruser/circleci:$CIRCLE_SHA1
+              echo $dockeruser | docker login -u $dockeruser -p $dockerpas
+              docker push $dockeruser/$CIRCLE_BRANCH:$CIRCLE_SHA1
+              echo "push circleci image version successfull"
+              docker image ls
            else
               echo "don't push workflow image"
               docker image ls
