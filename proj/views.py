@@ -7,6 +7,6 @@ def view():
     today = str(date.today()) 
     """Return a friendly HTTP greeting."""
     message = "simpleapps redeployedd Wow how it's Nice!!"
-    congramessage="Congratulations, you successfully deployed  container image to Cloud Run at:", today
+    congramessage="Congratulations, you successfully deployed  container image to Cloud Run at:"
     """Get Cloud Run environment variables."""
-    return render_template('index.html' ,congmsg=congramessage,message=message)
+    return render_template('index.html' ,congmsg=congramessage,message=message ,today=today)
