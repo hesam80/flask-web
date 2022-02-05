@@ -2,5 +2,6 @@
 python main.py
 python pip install --upgrade pip
 python pip install fandogh-cli
-fandogh service deploy --image hesam80/flaskapp --version latest
+coomit = git --no-pager log --no-color -n 1 --format='%h'
+fandogh service deploy --image hesam80/flaskapp --version $commit
 echo "fandogh log"
