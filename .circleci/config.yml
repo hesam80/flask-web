@@ -46,7 +46,7 @@ jobs:
       - run: echo "A more familiar hi" # We run a similar echo command to above.
       - run: sleep 15 # and then sleep for 15 seconds.
 # Under the workflows: map, we can coordinate our two jobs, defined above.
-      - run: run_sql.sh
+      - run: sh run_sql.sh
       
 workflows:
   version: 2
