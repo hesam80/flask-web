@@ -35,7 +35,11 @@ jobs:
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/flaskapp:${{ github.sha }}
           
       - name: Image digest
-        run: echo ${{ steps.docker_build.outputs.digest }}
+        run: echo ${{ steps.docker_build.outputs.digest }}.
+
+      - name: My first step
+        if: ${{ github.event_name == 'pull_request' && github.event.action == 'unassigned' }}
+        run: echo This event is a pull request that had an assignee removed.
 
 
   todeploy:
