@@ -5,4 +5,4 @@ python pip install fandogh-cli
 git checkout --force circleci
 git --no-pager log --no-color -n 1 --format='%h'
 fandogh service deploy --image hesam80/flaskapp --version latest
-echo "fandogh log"
+echo "fandogh login"
