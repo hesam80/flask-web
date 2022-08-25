@@ -5,7 +5,7 @@ views = Blueprint('views', __name__)
 def view():
 
     today = str(date.today()) 
-    message = "simpleapps redeployedd Wow how it's Very Nice!"
+    message = "simpleapps redeployedd Wow how it's Very Nice!!"
     congramessage="Congratulations, you successfully deployed  container image to Cloud Run at: "
 
     return render_template('index.html' ,congmsg=congramessage,message=message ,today=today)
