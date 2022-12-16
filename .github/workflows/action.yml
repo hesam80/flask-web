@@ -56,4 +56,5 @@ jobs:
           username: ${{ secrets.FANDOGH_USERNAME }}
           password: ${{ secrets.FANDOGH_PASSWORD }}
           image_name: ${{ secrets.DOCKER_HUB_USERNAME }}/flaskapp
+          image_version: ${{ github.sha }}
           path_to_service_file: ./flaskapp.yml
