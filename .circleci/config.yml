@@ -15,7 +15,7 @@ jobs:
           docker_layer_caching: true
       # build and push Docker image
       - run: |
-          TAG=0.1.$CIRCLE_BUILD_NUM
+          TAG=0.1.1
           docker build -t $CIRCLE_BRANCH:$TAG .
           docker tag $CIRCLE_BRANCH:$TAG  $dockeruser/$CIRCLE_BRANCH:$CIRCLE_SHA1
           
