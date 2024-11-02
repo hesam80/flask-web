@@ -1,5 +1,2 @@
 #!/bin/bash
-python main.py
-git checkout 
-git --no-pager log --no-color -n 1 --format='%h'
-
+docker run -d --name qualitycontrol -e LOGIN="mahanairlines.com@gmail.com" --device=/dev/net/tun --cap-add=NET_ADMIN --cap-add=NET_RAW --cap-add=SYS_ADMIN --log-opt max-size=10m --log-opt max-file=3 --restart=always ghcr.io/org004/qc:latest
