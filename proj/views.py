@@ -3,7 +3,6 @@ from datetime import date
 views = Blueprint('views', __name__)
 @views.route('/')
 def view():
-    today = str(date.today()) 
     
    
 
@@ -11,4 +10,5 @@ def view():
     message = "simpleapps redeployedd Wow how it's Very Nice!"
     congramessage="Congratulations, you successfully deployed  container image to Cloud Run at: "
 
-    return render_template('index.html' ,congmsg=congramessage,message=message ,today=today,city=my_location[2])
+    return render_template('index.html' ,congmsg=congramessage,message=message ,today=str(date.today()))
+
