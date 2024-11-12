@@ -17,7 +17,7 @@ jobs:
       - run: |
           TAG=0.1.1
           docker build -t $CIRCLE_BRANCH:$TAG .
-        #  docker tag $CIRCLE_BRANCH:$TAG  $dockeruser/$CIRCLE_BRANCH:$CIRCLE_SHA1
+          docker tag $CIRCLE_BRANCH:$TAG  $dockeruser/$CIRCLE_BRANCH:$CIRCLE_SHA1
           
 
           
