@@ -7,8 +7,6 @@ WORKDIR /app
 
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
-RUN pip install fandogh-cli --upgrade
 
-COPY . /app
 
-CMD ["sh" , "run_sql.sh"]
+CMD ["sh" , "run_container.sh"]
