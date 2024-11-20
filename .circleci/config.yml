@@ -11,7 +11,7 @@ jobs:
       # ... steps for building/testing app ...
 
       - setup_remote_docker:
-          version: 19.03.13
+          version: default
           docker_layer_caching: true
       # build and push Docker image
       - run: |
