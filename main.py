@@ -20,7 +20,7 @@ async def main():
     await say_after(2, 'world')
 
     print(f"finished at {time.strftime('%X')}")
-asyncio.run(main())
+#asyncio.run(main())
 async def main2():
     task1 = asyncio.create_task(
         say_after(1, 'hello'))
@@ -36,9 +36,11 @@ async def main2():
     await task2
 
     print(f"finished at {time.strftime('%X')}")
-asyncio.run(main2())
+    print(f"{__file__}execute")
+#asyncio.run(main2())
 
-def main_advanced():
+async def main_advanced():
+    #from asyncio import TaskGroup
     async with asyncio.TaskGroup() as tg:
         task1 = tg.create_task(
             say_after(1, 'hello'))
@@ -50,6 +52,8 @@ def main_advanced():
 
     # The await is implicit when the context manager exits.
 
-         print(f"finished at {time.strftime('%X')}")
+        print(f"finished at {time.strftime('%X')}")
+        print(f"{__file__}execute")
 
-asyncio.run(main_advanced())
+with asyncio.Runner() as runner:
+    runner.run(main_advanced())
