@@ -22,6 +22,7 @@ async def main():
     print(f"finished at {time.strftime('%X')}")
 #asyncio.run(main())
 async def main2():
+    start_task=time.perf_counter()
     task1 = asyncio.create_task(
         say_after(1, 'hello'))
 
@@ -36,8 +37,11 @@ async def main2():
     await task2
 
     print(f"finished at {time.strftime('%X')}")
-    print(f"{__file__}execute")
-#asyncio.run(main2())
+    #print(f"{__file__}execute")
+    task_done=time.perf_counter()
+    elapsed=task_done-start_task
+    print(f"this task executed in {elapsed:.6f} seconds.")
+asyncio.run(main2())
 
 async def main_advanced():
     #from asyncio import TaskGroup
@@ -55,5 +59,5 @@ async def main_advanced():
         print(f"finished at {time.strftime('%X')}")
         print(f"{__file__}execute")
 
-with asyncio.Runner() as runner:
-    runner.run(main_advanced())
+#with asyncio.Runner() as runner:
+    #runner.run(main_advanced())
