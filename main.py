@@ -40,7 +40,9 @@ async def main2():
     #print(f"{__file__}execute")
     task_done=time.perf_counter()
     elapsed=task_done-start_task
+    elapsed_miliseconds=elapsed*1000
     print(f"this task executed in {elapsed:.6f} seconds.")
+    print(f"this task executed in {elapsed_miliseconds:.1f} miliseconds.")
 asyncio.run(main2())
 
 async def main_advanced():
