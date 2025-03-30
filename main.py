@@ -37,6 +37,6 @@ async def main2():
     task_done=time.perf_counter()
     elapsed=task_done-start_task
     elapsed_miliseconds=elapsed*1000
-    print(f"this task executed in {elapsed:.6f} seconds.")
+    print(f"this task executed in {elapsed:.6f} seconds on asyncio branch.")
     print(f"this task executed in {elapsed_miliseconds:.1f} miliseconds.")
 asyncio.run(main2())
